@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es2018",
+    "experimentalDecorators": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "outDir": "."
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["**/*.stories.*"]
+}
