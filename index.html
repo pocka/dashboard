@@ -1,0 +1,55 @@
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Dashboard</title><style>body {
+        margin: 0;
+      }
+
+      @import url('https://rsms.me/inter/inter.css');
+      html {
+        font-family: 'Inter', sans-serif;
+      }
+      @supports (font-variation-settings: normal) {
+        html {
+          font-family: 'Inter var', sans-serif;
+        }
+      }
+
+      :root {
+        --sid-unit: 8px;
+        --sid-bg: #272822;
+        --sid-fg: #66d9ef;
+
+        font-family: 'Inter', sans-serif;
+      }
+
+      .xlarge {
+        font-size: 64px;
+        font-weight: bold;
+      }
+
+      .large {
+        font-size: 30px;
+      }
+
+      .medium {
+        font-size: 24px;
+      }
+
+      .secondary {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        font-weight: bold;
+      }
+      .secondary > :not(:first-child) {
+        margin-block-start: calc(var(--sid-unit) * 3);
+      }</style><script>const holidays = fetch('https://holidays-jp.github.io/api/v1/date.json')
+        .then(resp => resp.json())
+        .then(data => Object.entries(data).map(([date]) => date))
+
+      window.addEventListener('DOMContentLoaded', ev => {
+        const calendar = document.getElementById('calendar')
+
+        holidays.then(h => {
+          calendar.setAttribute('holidays', h)
+        })
+      })</script><script defer="defer" src="main.80b421756a572d6d3023.js"></script></head><body><sid-layout><div slot="secondary" class="secondary"><sid-clock class="large" format="yyyy-MM-dd"></sid-clock><sid-calendar id="calendar" class="medium"></sid-calendar></div><sid-clock class="xlarge"/></sid-layout></body></html>
